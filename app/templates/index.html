@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Radar MVP</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="container page-header">
+      <h1>Content Radar</h1>
+      <p class="subtitle">MVP-анализ контента конкурентов для маркетолога</p>
+    </header>
+
+    <main class="container layout">
+      <section class="panel">
+        <h2>Ввод конкурентов и источников данных</h2>
+
+        <div class="mode-grid">
+          <article class="mode-card">
+            <h3>Сценарий 1: загрузка файла</h3>
+            <form id="upload-form" class="form-grid">
+              <label>
+                Конкуренты для фильтра (через запятую)
+                <input id="competitors" type="text" placeholder="Brand A, Brand B" />
+              </label>
+              <label>
+                Название конкурента для файла (опционально)
+                <input id="competitor-name" type="text" placeholder="Brand A" />
+              </label>
+              <label>
+                Файл постов (JSON/CSV)
+                <input id="posts-file" type="file" accept=".json,.csv" required />
+              </label>
+              <div class="actions">
+                <button type="submit">Загрузить файл</button>
+                <button id="load-demo" type="button" class="secondary">Загрузить демоданные</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="mode-card">
+            <h3>Сценарий 2: без файла (по ссылке)</h3>
+            <form id="discover-form" class="form-grid">
+              <label>
+                Ссылка на источник/конкурента
+                <input id="source-url" type="url" placeholder="https://example.com/competitor" required />
+              </label>
+              <label>
+                Имя конкурента (опционально)
+                <input id="discover-competitor" type="text" placeholder="MarketPulse" />
+              </label>
+              <label>
+                Количество постов
+                <input id="discover-limit" type="number" min="3" max="50" value="12" />
+              </label>
+              <div class="actions">
+                <button id="discover-posts" type="submit">Получить посты</button>
+                <button id="select-posts" type="button" class="secondary" disabled>
+                  Сохранить выбранные посты
+                </button>
+              </div>
+            </form>
+
+            <div class="scenario-helper">
+              <div id="discover-source-note" class="notice" hidden></div>
+              <p class="subtitle small flow-hint">
+                Порядок действий: Получить посты → Выбрать → Сохранить → Запустить анализ.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="actions top-gap">
+          <button id="run-analysis" type="button" disabled>Запустить анализ</button>
+          <button id="get-insights" type="button" class="secondary">Обновить рекомендации</button>
+        </div>
+
+        <p id="status" class="status"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Доступные посты для выбора</h2>
+        <div class="selection-toolbar">
+          <div class="actions">
+            <button id="select-all-posts" type="button" class="secondary" disabled>Выбрать все посты</button>
+            <button id="clear-selected-posts" type="button" class="ghost" disabled>Снять выбор</button>
+          </div>
+          <div id="selected-count" class="selected-count">Выбрано постов: 0</div>
+        </div>
+        <p id="selection-status" class="status small" hidden></p>
+        <div class="table-wrap">
+          <table id="discover-table">
+            <thead>
+              <tr>
+                <th>Выбор</th>
+                <th>#</th>
+                <th>Дата</th>
+                <th>Конкурент</th>
+                <th>Формат</th>
+                <th>Текст поста</th>
+                <th>Лайки</th>
+                <th>Комментарии</th>
+                <th>Репосты</th>
+                <th>Просмотры</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Сводка анализа</h2>
+        <div id="summary-cards" class="cards"></div>
+      </section>
+
+      <section class="panel info-panel">
+        <h2>Что означает вовлечённость</h2>
+        <p>
+          Вовлечённость — это показатель активности аудитории. Он показывает, насколько пользователи
+          взаимодействуют с постом.
+        </p>
+        <div class="engagement-formula-box">
+          <p class="formula-line">
+            Вовлечённость =<br />
+            Лайки × 1 + Комментарии × 2 + Репосты × 3 + Просмотры × 0.1
+          </p>
+        </div>
+        <p class="small-muted">
+          Показатель измеряется в условных баллах и используется для сравнения эффективности постов.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>График вовлечённости по постам</h2>
+        <canvas id="engagement-chart" width="1000" height="320"></canvas>
+      </section>
+
+      <section class="panel">
+        <h2>Топ-3 поста по вовлечённости</h2>
+        <div id="top-posts" class="cards"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Все посты в анализе</h2>
+        <div class="table-wrap table-wrap-compact">
+          <table id="posts-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Дата</th>
+                <th>Формат</th>
+                <th>Конкурент</th>
+                <th>Текст</th>
+                <th>Лайки</th>
+                <th>Комментарии</th>
+                <th>Репосты</th>
+                <th>Просмотры</th>
+                <th>Вовлечённость</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel split">
+        <div>
+          <h2>Топ тем</h2>
+          <ul id="topics-list" class="list topics-list"></ul>
+        </div>
+        <div>
+          <h2>Топ форматов</h2>
+          <ul id="formats-list" class="list"></ul>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Лучшее время публикации</h2>
+        <div id="best-time" class="cards"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Рекомендации маркетологу</h2>
+        <ul id="recommendations" class="list recommendations"></ul>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
