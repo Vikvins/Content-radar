@@ -1,0 +1,122 @@
+[
+  {
+    "competitor": "BrandNova",
+    "text": "Запустили весенний чеклист по контент-плану для малого бизнеса",
+    "likes": 420,
+    "comments": 51,
+    "shares": 38,
+    "views": 5200,
+    "date": "2026-03-01T09:30:00",
+    "format": "carousel"
+  },
+  {
+    "competitor": "BrandNova",
+    "text": "Короткий гайд: 5 ошибок в таргете и как их исправить",
+    "likes": 380,
+    "comments": 47,
+    "shares": 29,
+    "views": 4700,
+    "date": "2026-03-02T19:20:00",
+    "format": "video"
+  },
+  {
+    "competitor": "BrandNova",
+    "text": "Разбор кейса: рост заявок на 32% через UGC",
+    "likes": 510,
+    "comments": 64,
+    "shares": 49,
+    "views": 6200,
+    "date": "2026-03-03T13:10:00",
+    "format": "post"
+  },
+  {
+    "competitor": "MarketPulse",
+    "text": "Шаблон контент-матрицы на месяц: сохраняйте и внедряйте",
+    "likes": 605,
+    "comments": 72,
+    "shares": 60,
+    "views": 7000,
+    "date": "2026-03-04T10:45:00",
+    "format": "carousel"
+  },
+  {
+    "competitor": "MarketPulse",
+    "text": "Видео: как писать цепляющие заголовки под Reels",
+    "likes": 560,
+    "comments": 75,
+    "shares": 44,
+    "views": 8100,
+    "date": "2026-03-05T20:05:00",
+    "format": "video"
+  },
+  {
+    "competitor": "MarketPulse",
+    "text": "Тренд недели: микро-истории бренда в соцсетях",
+    "likes": 330,
+    "comments": 31,
+    "shares": 22,
+    "views": 4500,
+    "date": "2026-03-06T08:20:00",
+    "format": "post"
+  },
+  {
+    "competitor": "AdVector",
+    "text": "Подборка AI-инструментов для маркетолога без подписок",
+    "likes": 710,
+    "comments": 88,
+    "shares": 73,
+    "views": 8800,
+    "date": "2026-03-07T12:05:00",
+    "format": "carousel"
+  },
+  {
+    "competitor": "AdVector",
+    "text": "Видео-разбор воронки: где бизнес теряет лиды",
+    "likes": 690,
+    "comments": 90,
+    "shares": 68,
+    "views": 9200,
+    "date": "2026-03-08T21:30:00",
+    "format": "video"
+  },
+  {
+    "competitor": "AdVector",
+    "text": "Чеклист по запуску рекламной кампании за 30 минут",
+    "likes": 470,
+    "comments": 56,
+    "shares": 40,
+    "views": 6100,
+    "date": "2026-03-09T11:00:00",
+    "format": "post"
+  },
+  {
+    "competitor": "BrandNova",
+    "text": "Лучшее время публикации: сравнили 200 постов за квартал",
+    "likes": 530,
+    "comments": 70,
+    "shares": 58,
+    "views": 6600,
+    "date": "2026-03-10T18:15:00",
+    "format": "carousel"
+  },
+  {
+    "competitor": "MarketPulse",
+    "text": "Вовлеченность в Stories: 7 тактик для e-commerce",
+    "likes": 480,
+    "comments": 53,
+    "shares": 35,
+    "views": 6400,
+    "date": "2026-03-10T17:05:00",
+    "format": "video"
+  },
+  {
+    "competitor": "AdVector",
+    "text": "Сравнение форматов: пост против видео в B2B нише",
+    "likes": 540,
+    "comments": 67,
+    "shares": 41,
+    "views": 7600,
+    "date": "2026-03-11T14:40:00",
+    "format": "post"
+  }
+]
