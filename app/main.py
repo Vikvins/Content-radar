@@ -9,6 +9,7 @@ from fastapi.templating import Jinja2Templates
 
 from app.models import (
     AnalyzeRequest,
+    DemoLoadResponse,
     DiscoverPostItem,
     DiscoverPostsRequest,
     DiscoverPostsResponse,
@@ -24,6 +25,20 @@ BASE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = BASE_DIR.parent
 DATA_DIR = PROJECT_ROOT / "data"
 DEMO_FILE = DATA_DIR / "demo_posts.json"
+STATIC_APP_JS = BASE_DIR / "static" / "app.js"
+
+
+def _resolve_static_version() -> str:
+    """Возвращает версию фронтенд-скрипта для cache-busting в шаблоне."""
+
+    try:
+        return str(int(STATIC_APP_JS.stat().st_mtime))
+    except OSError:
+        # Безопасный fallback, если файл временно недоступен.
+        return "1"
+
+
+STATIC_VERSION = _resolve_static_version()
 
 app = FastAPI(
     title="Content Radar MVP",
@@ -40,7 +55,15 @@ store = InMemoryPostStore()
 def index(request: Request) -> HTMLResponse:
     """Главная страница MVP."""
 
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            # Принудительно меняем URL app.js при каждом обновлении файла,
+            # чтобы браузер не использовал старый кэш со stale-логикой таблицы.
+            "static_version": STATIC_VERSION,
+        },
+    )
 
 
 @app.get("/health")
@@ -181,9 +204,9 @@ def insights() -> InsightResponse:
     )
 
 
-@app.post("/load_demo", response_model=UploadResponse)
-def load_demo() -> UploadResponse:
-    """Загружает демонстрационные данные из data/demo_posts.json."""
+@app.post("/load_demo", response_model=DemoLoadResponse)
+def load_demo() -> DemoLoadResponse:
+    """Загружает демоданные и синхронизирует их с таблицей доступных постов."""
 
     if not DEMO_FILE.exists():
         raise HTTPException(status_code=404, detail="Демо-файл не найден.")
@@ -194,5 +217,26 @@ def load_demo() -> UploadResponse:
     except ParseError as exc:
         raise HTTPException(status_code=500, detail=f"Ошибка демоданных: {exc}") from exc
 
+    # Ключевая синхронизация: демоданные становятся и рабочим набором,
+    # и источником для таблицы «Доступные посты», чтобы UI не показывал старые записи.
     store.replace_posts(posts)
-    return UploadResponse(message="Демоданные успешно загружены", posts_count=len(posts))
+    store.set_discovered_posts(posts)
+
+    return DemoLoadResponse(
+        message="Демоданные успешно загружены",
+        posts_count=len(posts),
+        posts=[
+            DiscoverPostItem(
+                discovered_id=idx,
+                text=post.text,
+                format=post.format,
+                date=post.date,
+                competitor=post.competitor,
+                likes=post.likes,
+                comments=post.comments,
+                shares=post.shares,
+                views=post.views,
+            )
+            for idx, post in enumerate(posts)
+        ],
+    )

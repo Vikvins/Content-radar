@@ -79,6 +79,12 @@ class DiscoverPostsResponse(BaseModel):
     posts: list[DiscoverPostItem]
 
 
+class DemoLoadResponse(UploadResponse):
+    """Ответ загрузки демоданных с постами для моментального обновления UI-таблицы."""
+
+    posts: list[DiscoverPostItem]
+
+
 class SelectPostsRequest(BaseModel):
     """Запрос на выбор постов для дальнейшего анализа."""
 
