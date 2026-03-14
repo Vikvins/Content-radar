@@ -297,6 +297,11 @@ function renderDiscoveredPosts(posts) {
   updateSelectedCount();
 }
 
+function setDiscoveredPosts(posts) {
+  state.discoveredPosts = Array.isArray(posts) ? posts : [];
+  renderDiscoveredPosts(state.discoveredPosts);
+}
+
 function getSelectedDiscoveredIds() {
   return Array.from(document.querySelectorAll(".post-check:checked"))
     .map((el) => Number(el.dataset.id))
@@ -523,6 +528,7 @@ async function handleUpload(event) {
     clearOutput();
     markDataPrepared(payload.posts_count, `${payload.message}. Постов: ${payload.posts_count}`);
     setSelectionStatus("");
+    setSourceNote("");
   } catch (error) {
     setStatus(error.message, true);
   }
@@ -559,9 +565,7 @@ async function handleDiscover(event) {
       throw new Error(body.detail || "Ошибка получения постов");
     }
 
-    state.discoveredPosts = body.posts || [];
-    renderDiscoveredPosts(state.discoveredPosts);
-
+    setDiscoveredPosts(body.posts || []);
     setPreparedPostsCount(0);
     setSelectionStatus("");
 
@@ -701,8 +705,14 @@ async function handleLoadDemo() {
     state.analysis = null;
     state.insights = null;
     clearOutput();
+
+    // При загрузке демо полностью заменяем список доступных постов,
+    // чтобы таблица не показывала старые Telegram-данные.
+    setDiscoveredPosts(payload.posts || []);
+
     markDataPrepared(payload.posts_count, `${payload.message}. Постов: ${payload.posts_count}`);
     setSelectionStatus("");
+    setSourceNote("Источник: встроенный демонабор. Режим: demo.", "success");
   } catch (error) {
     setStatus(error.message, true);
   }
