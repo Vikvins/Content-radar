@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Radar MVP</title>
+    <link rel="stylesheet" href="/static/styles.css?v={{ css_version }}" />
+  </head>
+  <body>
+    <header class="container page-header">
+      <h1>Content Radar</h1>
+      <p class="subtitle">Сравнение вашего канала с конкурентами: кто выигрывает и что делать дальше</p>
+    </header>
+
+    <main class="container layout">
+      <section class="panel">
+        <h2>Сравнение каналов</h2>
+
+        <form id="compare-form" class="form-grid">
+          <div class="split">
+            <label>
+              Ваш канал (название)
+              <input id="my-channel-name" type="text" placeholder="Мой бренд" required />
+            </label>
+            <label>
+              Ссылка на ваш канал
+              <input id="my-channel-url" type="url" placeholder="https://t.me/your_channel" required />
+            </label>
+          </div>
+
+          <div class="competitor-block">
+            <div class="competitor-header">
+              <h3>Конкуренты</h3>
+            </div>
+            <div id="competitors-list" class="competitors-list"></div>
+            <div class="competitor-footer">
+              <button id="add-competitor" type="button" class="ghost">+ Добавить конкурента</button>
+            </div>
+          </div>
+
+          <label class="posts-limit-control">
+            Сколько последних постов брать по каждому каналу
+            <input id="posts-limit" class="posts-limit-input" type="number" min="3" max="50" value="12" />
+          </label>
+
+          <div class="actions">
+            <button id="run-compare" type="submit">Запустить сравнение</button>
+            <button id="load-compare-demo" type="button" class="secondary">Демосценарий</button>
+          </div>
+        </form>
+
+        <p id="status" class="status"></p>
+      </section>
+
+      <section id="winner-panel" class="panel" hidden>
+        <div id="winner-card"></div>
+      </section>
+
+      <section id="ranking-panel" class="panel" hidden>
+        <h2>Рейтинг каналов</h2>
+        <div class="table-wrap table-wrap-compact">
+          <table id="ranking-table">
+            <thead>
+              <tr>
+                <th>Место</th>
+                <th>Канал</th>
+                <th>Средняя вовлечённость</th>
+                <th>Ваше отставание от лидера</th>
+                <th>Ключевое преимущество</th>
+                <th>Слабая сторона</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="engagement-info-panel" class="panel info-panel" hidden>
+        <h2>Что означает вовлечённость</h2>
+        <p>
+          Вовлечённость — это показатель активности аудитории. Он показывает, насколько пользователи
+          взаимодействуют с постом.
+        </p>
+        <div class="engagement-formula-box">
+          <p id="formula-line" class="formula-line">
+            Вовлечённость = Лайки × 1 + Комментарии × 2 + Репосты × 3 + Просмотры × 0.1
+          </p>
+        </div>
+        <p class="small-muted">
+          Показатель измеряется в условных баллах и используется для сравнения эффективности постов.
+        </p>
+      </section>
+
+      <section id="chart-panel" class="panel" hidden>
+        <h2>Динамика вовлечённости по времени</h2>
+        <canvas id="channels-chart" width="1000" height="340"></canvas>
+      </section>
+
+      <section id="insights-panel" class="panel" hidden></section>
+
+      <section id="details-panel" class="panel" hidden>
+        <h2>Детали по каналам</h2>
+        <div id="details-cards" class="details-list"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js?v={{ js_version }}"></script>
+  </body>
+</html>
