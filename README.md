@@ -166,7 +166,7 @@ flowchart LR
 
 Локальная демонстрация доступна после запуска сервера по адресу `http://127.0.0.1:8000`
 
-![Превью интерфейса Content Radar](docs/screenshots/dashboard-preview.svg)
+![Превью интерфейса Content Radar](<img width="1384" height="462" alt="image" src="https://github.com/user-attachments/assets/b2b66c0e-59c8-47f4-a6a5-f56bdb8cbe5c" />)
 
 Главный сценарий:
 
