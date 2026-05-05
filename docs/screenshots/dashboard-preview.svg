@@ -1,49 +1,43 @@
-<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Content Radar dashboard preview</title>
-  <desc id="desc">Превью интерфейса Content Radar с формой сравнения каналов, рейтингом и блоком рекомендаций</desc>
-  <rect width="1200" height="760" fill="#0F172A"/>
-  <text x="72" y="92" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="56" font-weight="800">Content Radar</text>
-  <text x="74" y="132" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22">Сравнение канала с конкурентами: кто выигрывает и что делать дальше</text>
+<svg width="1418" height="462" viewBox="0 0 1418 462" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Content Radar winner panel screenshot</title>
+  <desc id="desc">Скриншот блока победителя Content Radar с каналом ЛаймКонтент Медиа и метриками сравнения</desc>
+  <defs>
+    <linearGradient id="winnerGradient" x1="96" y1="56" x2="1274" y2="416" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172136"/>
+      <stop offset="0.58" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#0E4A46"/>
+    </linearGradient>
+    <linearGradient id="outerGradient" x1="67" y1="27" x2="1301" y2="443" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#22364C"/>
+    </linearGradient>
+    <filter id="softShadow" x="0" y="-40" width="1418" height="560" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="28" flood-color="#020617" flood-opacity="0.52"/>
+    </filter>
+  </defs>
 
-  <rect x="72" y="178" width="498" height="468" rx="14" fill="#1E293B" stroke="#334155"/>
-  <text x="104" y="226" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">Сравнение каналов</text>
+  <rect width="1418" height="462" fill="#0F172A"/>
+  <rect x="68" y="28" width="1233" height="415" rx="16" fill="url(#outerGradient)" stroke="#34445B" stroke-width="2" filter="url(#softShadow)"/>
+  <rect x="96" y="56" width="1178" height="360" rx="17" fill="url(#winnerGradient)" stroke="#0F947D" stroke-width="2"/>
 
-  <text x="104" y="276" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">Ваш канал</text>
-  <rect x="104" y="292" width="198" height="54" rx="10" fill="#0B1220" stroke="#334155"/>
-  <text x="124" y="325" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">Мой бренд</text>
-  <rect x="320" y="292" width="218" height="54" rx="10" fill="#0B1220" stroke="#334155"/>
-  <text x="340" y="325" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">https://t.me/channel</text>
+  <text x="122" y="101" fill="#6FF2BD" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">Главный результат сравнения</text>
+  <text x="122" y="128" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Победитель</text>
 
-  <text x="104" y="390" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">Конкуренты</text>
-  <rect x="104" y="408" width="434" height="76" rx="12" fill="#18263B" stroke="#334155"/>
-  <rect x="124" y="430" width="160" height="34" rx="8" fill="#0B1220" stroke="#334155"/>
-  <rect x="300" y="430" width="218" height="34" rx="8" fill="#0B1220" stroke="#334155"/>
-  <text x="137" y="452" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">Конкурент 1</text>
-  <text x="315" y="452" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">https://t.me/competitor</text>
+  <text x="122" y="192" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="47" font-weight="900">ЛаймКонтент Медиа</text>
+  <text x="122" y="230" fill="#D7FAF6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="500">Лидер усиливает формат «Видео» и стабильно публикует в слот «13:00», где лучше всего работает тема «антикризисный»</text>
 
-  <rect x="104" y="516" width="170" height="48" rx="8" fill="#6366F1"/>
-  <text x="128" y="546" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Запустить сравнение</text>
-  <rect x="290" y="516" width="140" height="48" rx="8" fill="#334155"/>
-  <text x="319" y="546" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Демосценарий</text>
+  <text x="122" y="273" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="800">Слабая сторона:</text>
+  <text x="262" y="273" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="500">Нет явных слабых сторон</text>
 
-  <rect x="610" y="178" width="518" height="162" rx="16" fill="#123B32" stroke="#10B981"/>
-  <text x="644" y="226" fill="#6EE7B7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">ПОБЕДИТЕЛЬ ПО ВОВЛЕЧЁННОСТИ</text>
-  <text x="644" y="270" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="40" font-weight="900">Brand Leader</text>
-  <text x="644" y="305" fill="#D1FAE5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">Стабильно выше по комментариям и репостам</text>
+  <rect x="123" y="303" width="365" height="85" rx="10" fill="#152238" stroke="#34445B" stroke-width="2"/>
+  <text x="137" y="332" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500">Вовлечённость лидера</text>
+  <text x="137" y="370" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="900">4535.3</text>
 
-  <rect x="610" y="368" width="518" height="204" rx="14" fill="#1E293B" stroke="#334155"/>
-  <text x="644" y="414" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Рейтинг каналов</text>
-  <rect x="644" y="438" width="450" height="42" rx="8" fill="#233248"/>
-  <text x="664" y="465" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Канал</text>
-  <text x="838" y="465" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Вовлечённость</text>
-  <text x="1010" y="465" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Разрыв</text>
-  <text x="664" y="512" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">1. Brand Leader</text>
-  <text x="858" y="512" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">842</text>
-  <text x="1020" y="512" fill="#10B981" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">0%</text>
-  <text x="664" y="548" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">2. Мой бренд</text>
-  <text x="858" y="548" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">694</text>
-  <text x="1020" y="548" fill="#F59E0B" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">18%</text>
+  <rect x="502" y="303" width="365" height="85" rx="10" fill="#152238" stroke="#34445B" stroke-width="2"/>
+  <text x="516" y="332" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500">Позиция вашего канала</text>
+  <text x="516" y="370" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="900">#3</text>
 
-  <rect x="610" y="600" width="518" height="46" rx="12" fill="#10263B" stroke="#334155"/>
-  <text x="638" y="630" fill="#BFDBFE" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Рекомендация: усилить посты с кейсами и публиковать в вечерний слот</text>
+  <rect x="881" y="303" width="364" height="85" rx="10" fill="#152238" stroke="#34445B" stroke-width="2"/>
+  <text x="895" y="332" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500">Ваше отставание от лидера</text>
+  <text x="895" y="370" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="900">84.8%</text>
 </svg>
