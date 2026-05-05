@@ -1,0 +1,49 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Content Radar dashboard preview</title>
+  <desc id="desc">Превью интерфейса Content Radar с формой сравнения каналов, рейтингом и блоком рекомендаций</desc>
+  <rect width="1200" height="760" fill="#0F172A"/>
+  <text x="72" y="92" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="56" font-weight="800">Content Radar</text>
+  <text x="74" y="132" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22">Сравнение канала с конкурентами: кто выигрывает и что делать дальше</text>
+
+  <rect x="72" y="178" width="498" height="468" rx="14" fill="#1E293B" stroke="#334155"/>
+  <text x="104" y="226" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">Сравнение каналов</text>
+
+  <text x="104" y="276" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">Ваш канал</text>
+  <rect x="104" y="292" width="198" height="54" rx="10" fill="#0B1220" stroke="#334155"/>
+  <text x="124" y="325" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">Мой бренд</text>
+  <rect x="320" y="292" width="218" height="54" rx="10" fill="#0B1220" stroke="#334155"/>
+  <text x="340" y="325" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">https://t.me/channel</text>
+
+  <text x="104" y="390" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">Конкуренты</text>
+  <rect x="104" y="408" width="434" height="76" rx="12" fill="#18263B" stroke="#334155"/>
+  <rect x="124" y="430" width="160" height="34" rx="8" fill="#0B1220" stroke="#334155"/>
+  <rect x="300" y="430" width="218" height="34" rx="8" fill="#0B1220" stroke="#334155"/>
+  <text x="137" y="452" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">Конкурент 1</text>
+  <text x="315" y="452" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">https://t.me/competitor</text>
+
+  <rect x="104" y="516" width="170" height="48" rx="8" fill="#6366F1"/>
+  <text x="128" y="546" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Запустить сравнение</text>
+  <rect x="290" y="516" width="140" height="48" rx="8" fill="#334155"/>
+  <text x="319" y="546" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Демосценарий</text>
+
+  <rect x="610" y="178" width="518" height="162" rx="16" fill="#123B32" stroke="#10B981"/>
+  <text x="644" y="226" fill="#6EE7B7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">ПОБЕДИТЕЛЬ ПО ВОВЛЕЧЁННОСТИ</text>
+  <text x="644" y="270" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="40" font-weight="900">Brand Leader</text>
+  <text x="644" y="305" fill="#D1FAE5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">Стабильно выше по комментариям и репостам</text>
+
+  <rect x="610" y="368" width="518" height="204" rx="14" fill="#1E293B" stroke="#334155"/>
+  <text x="644" y="414" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Рейтинг каналов</text>
+  <rect x="644" y="438" width="450" height="42" rx="8" fill="#233248"/>
+  <text x="664" y="465" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Канал</text>
+  <text x="838" y="465" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Вовлечённость</text>
+  <text x="1010" y="465" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Разрыв</text>
+  <text x="664" y="512" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">1. Brand Leader</text>
+  <text x="858" y="512" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">842</text>
+  <text x="1020" y="512" fill="#10B981" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">0%</text>
+  <text x="664" y="548" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">2. Мой бренд</text>
+  <text x="858" y="548" fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">694</text>
+  <text x="1020" y="548" fill="#F59E0B" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">18%</text>
+
+  <rect x="610" y="600" width="518" height="46" rx="12" fill="#10263B" stroke="#334155"/>
+  <text x="638" y="630" fill="#BFDBFE" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Рекомендация: усилить посты с кейсами и публиковать в вечерний слот</text>
+</svg>
